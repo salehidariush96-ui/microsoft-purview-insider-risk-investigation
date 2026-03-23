@@ -4,6 +4,16 @@ This project documents a simulated insider threat investigation using Microsoft 
 
 ---
 
+## 🚨 Scenario
+
+An alert titled:
+
+**"Potential data theft – Employee Departure"**
+
+was triggered due to suspicious user activity involving sensitive data access and downloads from SharePoint.
+
+---
+
 ## 🎯 Objective
 
 To investigate a potential insider threat involving data exfiltration prior to employee departure and determine the risk level and appropriate response.
@@ -19,17 +29,7 @@ To investigate a potential insider threat involving data exfiltration prior to e
 
 ---
 
-## 🚨 Scenario
-
-An alert titled:
-
-**"Potential data theft – Employee Departure"**
-
-was triggered due to suspicious user activity involving sensitive data access and downloads from SharePoint.
-
----
-
-## 🔎 Investigation Process
+## 🔎 Investigation overview
 
 ### 1. Alert Triage (Microsoft Purview)
 
@@ -80,18 +80,62 @@ Key findings:
 
 ---
 
+## 🔍 Investigation evidence
+
+### 1. Alert Overview
+![Alert Overview](screenshots/alert-overview.png)
+
+Initial alert triggered for potential data exfiltration related to an employee departure.
+
+---
+
+### 2. User Activity Analysis
+![Risk Activity](screenshots/risk-activity.png)
+
+Analysis of user activity revealed multiple exfiltration behaviors including file downloads, archiving, and clipboard activity.
+
+---
+
+### 3. Copilot Summary
+![Copilot Summary](screenshots/copilot-summary.png)
+
+Copilot provided a summarized overview of suspicious activity to assist triage.
+
+---
+
+### 4. Case Creation
+![Case Created](screenshots/case-created.png)
+
+All alerts were confirmed and escalated into an insider risk case.
+
+---
+
+### 5. Incident Correlation (Microsoft Defender)
+![Defender Incident](screenshots/defender-incident.png)
+
+The activity was correlated with Microsoft Defender, confirming broader security impact.
+
+---
+
+### 6. Case Dashboard
+![Case Dashboard](screenshots/case-dashboard.png)
+
+Final case view showing consolidated alerts and investigation status.
+
+---
+
 ## 🧠 Analyst Assessment
 
-The observed behavior is consistent with:
+The activity strongly indicates **insider-driven data staging and potential exfiltration prior to employee departure**.
 
-> **Insider-driven data staging and potential exfiltration prior to employee departure**
+Although initially rated as medium risk, the combination of:
+- High-volume sensitive data access
+- File manipulation (renaming and deletion)
+- Data transfer indicators (downloads, uploads, clipboard activity)
 
-Despite a medium risk score, the combination of:
-- Sensitive data access  
-- File manipulation  
-- Account deletion  
+suggests a **high-confidence insider threat scenario**.
 
-indicates a **high-risk insider threat scenario**
+While account deletion was observed, this may be consistent with standard offboarding procedures. However, its timing in relation to suspicious data activity increases the overall risk profile.
 
 ---
 
@@ -116,12 +160,6 @@ These findings supported and validated the manual investigation.
 - Action taken:
   - HR notified
   - Case resolved
-
----
-
-## 📸 Screenshots
-
-Screenshots of key investigation steps are included in the `/screenshots` folder.
 
 ---
 
